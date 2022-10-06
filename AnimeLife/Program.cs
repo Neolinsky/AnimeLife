@@ -1,6 +1,12 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using AnimeLife;
+using AnimeLife.Application.DatabaseLayer.Implementations;
 
-app.MapGet("/", () => "Hello World!");
+var builder = WebApplication.CreateBuilder(args);
+builder.RegisterServices(); 
+
+var app = builder.Build();
+app.ConfigureApp();
 
 app.Run();
+
+
